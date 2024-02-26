@@ -15,6 +15,13 @@ return {
 
       ['<leader>q'] = { name = '+q' },
       ['<leader>qq'] = { '<cmd>q<cr>', 'Quit' },
+
+      -- Telescope
+      ['<leader>f'] = { name = '+Telescope' },
+      ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+      ["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+      ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", "Buffers" },
+      ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
     })
   end
 }
