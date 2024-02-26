@@ -14,7 +14,7 @@ return {
       ['<leader>s'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', 'Replace word in all file' },
 
       ['<leader>q'] = { name = '+q' },
-      ['<leader>qq'] = { '<cmd>qq', 'Quit' },
+      ['<leader>qq'] = { '<cmd>q<cr>', 'Quit' },
     })
   end
 }
