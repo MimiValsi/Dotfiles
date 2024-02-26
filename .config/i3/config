@@ -1,4 +1,4 @@
-# It will not be overwritten, so edit it as you like.
+
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
@@ -17,33 +17,55 @@ font pango:FiraCode Nerd Font 12
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/ArchWP.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/arch_pixel_black.PNG
 
 # Launch External Brightness HDMI1
-exec_always --no-startup-id $HOME/myFiles/bright6.sh
+exec_always --no-startup-id $HOME/scripts/bright6.sh
 
 # Gaps
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 5
 gaps outer 5
 smart_gaps on
 smart_borders on
 
+# Class
+client.focused          #00ff00 #285577 #ffffff #2e9ef4 #00ff00
+
+# Mouse
+focus_follows_mouse no
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym $mod+Ctrl+u exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $mod+Ctrl+F3 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym $mod+Ctrl+d exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $mod+Ctrl+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Ctrl+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $mod+Ctrl+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
 
 # Adjust laptop brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec xbacklight -inc 2
+bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+
+# Adjust external monitor brightness
+# -- HDMI1
+bindsym $mod+Ctrl+F5 exec ddcutil --bus 2 setvcp 10 - 10
+bindsym $mod+Ctrl+F6 exec ddcutil --bus 2 setvcp 10 + 10
+
+# -- DP2-3
+bindsym $mod+Shift+F5 exec ddcutil --bus 7 setvcp 10 - 10
+bindsym $mod+Shift+F6 exec ddcutil --bus 7 setvcp 10 + 10
+
+# -- DP2-2
+bindsym $mod+Ctrl+Shift+F5 exec ddcutil --bus 8 setvcp 10 - 10
+bindsym $mod+Ctrl+Shift+F6 exec ddcutil --bus 8 setvcp 10 + 10
+
 
 # Use playerctl for media
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -62,7 +84,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+j focus left
@@ -128,6 +150,8 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+Tab workspace back_and_forth
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -162,21 +186,30 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Custom shortcuts
+# Custom shortcuts for programs
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+o exec code
 bindsym $mod+Shift+s exec spotify
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+m exec emacs
 bindsym $mod+Shift+g exec gimp
-bindsym $mod+Shift+a exec $HOME/myFiles/ext_screen
-bindsym $mod+Shift+i exec $HOME/myFiles/int_screen
-bindsym $mod+Shift+k exec $HOME/myFiles/mykbd
+bindsym $mod+Shift+v exec vscodium
+bindsym $mod+Ctrl+v exec virtualbox
+bindsym $mod+Ctrl+d exec discord
+bindsym $mod+Ctrl+c exec claws-mail
+bindsym $mod+Ctrl+t exec tmux
 
-exec xautolock -detectsleep -time 10 -locker "$HOME/.config/i3/lock_and_blur.sh" \
-    -notify 30 -notifier "notify-send -u critical -t 10000 00 'locking screen in 30 seconds'"
+# Custom shortcuts for scripts
+bindsym $mod+Ctrl+e exec $HOME/scripts/ext_screen
+bindsym $mod+Ctrl+i exec $HOME/scripts/int_screen
+bindsym $mod+Ctrl+k exec $HOME/scripts/mykbd
+bindsym $mod+Ctrl+r exec $HOME/scripts/refreshScreen
+bindsym $mod+Ctrl+F12 exec $HOME/scripts/print
 
-mode "(L)ogout, (E)xit, (R)eboot, (P)oweroff" {
+bindsym $mod+Ctrl+Shift+l exec libreoffice Suivi_comptes_bancaires/BPRP.xlsx
+
+# System logout, exit, reboot and poweroff
+set $opts "(L)ogout, (E)xit, (R)eboot, (P)oweroff"
+mode $opts {
 
         bindsym $mod+r exec systemctl reboot
         bindsym $mod+e exec i3-msg exit
@@ -186,9 +219,5 @@ mode "(L)ogout, (E)xit, (R)eboot, (P)oweroff" {
         # bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Shift+e mode "(L)ogout, (E)xit, (R)eboot, (P)oweroff"
+bindsym $mod+Ctrl+q mode $opts
 
-mode "Block" {
-     bindsym $mod+Ctrl+Escape mode "default"
-}
-bindsym $mod+Ctrl+Escape mode "Block"
