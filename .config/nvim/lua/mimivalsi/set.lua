@@ -6,10 +6,14 @@ autocmd({'FileType'}, {
   pattern = '*', -- Change every type of file
 
   callback = function()
-    opt.textwidth = 80
+    opt.mouse = 'i' -- allows mouse in Insert mode only
     opt.relativenumber = true
+    opt.modifiable = true
     opt.number = true
     opt.clipboard = 'unnamedplus'
+    opt.syntax = 'on'
+    opt.encoding = 'utf-8'
+    opt.fileencoding = 'utf-8'
     opt.swapfile = false
     opt.backup = false
     opt.scrolloff = 8
@@ -21,6 +25,7 @@ autocmd({'FileType'}, {
     opt.shiftwidth = 4
     opt.ignorecase = true
     opt.smartcase = true
+    opt.splitright = true
   end,
 })
 
