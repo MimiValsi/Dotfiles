@@ -10,7 +10,7 @@ autocmd({'FileType'}, {
     opt.relativenumber = true
     opt.modifiable = true
     opt.number = true
-    opt.clipboard = 'unnamedplus'
+    --opt.clipboard = 'unnamedplus'
     opt.syntax = 'on'
     opt.encoding = 'utf-8'
     opt.fileencoding = 'utf-8'
@@ -19,7 +19,6 @@ autocmd({'FileType'}, {
     opt.scrolloff = 8
     opt.guicursor = 'n-v-c-sm:block'
     opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
-    opt.timeoutlen = 200
     opt.cursorline = true
     opt.smartindent = true
     opt.shiftwidth = 4
