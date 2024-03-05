@@ -2,18 +2,7 @@ local g = vim.g
 local map = vim.keymap.set
 
 g.mapleader = ' '
---['<C-k>'] 	= { '<cmd>cnext<CR>zz'}, -- quickfix navigation
---['<C-j>'] 	= { '<cmd>cprev<CR>zz'}, -- quickfix navigation
---['<leader>k'] 	= { '<cmd>lnext<CR>zz'}, -- quickfix navigation
---['<leader>j'] 	= { '<cmd>lprev<CR>zz'}, -- quickfix navigation
-
 -- normal mode
-
--- Telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
-map('n', '<leader>fg', '<cmd>Telescope live_grep')
-map('n', '<leader>fb', '<cmd>Telescope buffers')
-map('n', '<leader>fh', '<cmd>Telescope help_tags')
 
 -- replace the word everywhere in the file/buffer
 map('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
