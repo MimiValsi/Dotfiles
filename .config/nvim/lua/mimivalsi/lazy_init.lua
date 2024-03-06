@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('mimivalsi.lazy')
-
-
+require("lazy").setup("mimivalsi.lazy", {
+  change_detection = {
+    notify = false,
+  },
+})

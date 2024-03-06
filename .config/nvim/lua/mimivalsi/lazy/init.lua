@@ -1,4 +1,4 @@
 return {
-  'nvim-lua/plenary.nvim',
-  'mbbill/undotree',
+  "nvim-lua/plenary.nvim",
+  "mbbill/undotree",
 }

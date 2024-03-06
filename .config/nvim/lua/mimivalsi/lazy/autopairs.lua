@@ -1,8 +1,8 @@
 return {
-  'windwp/nvim-autopairs',
+  "windwp/nvim-autopairs",
 
   config = function()
-    require('nvim-autopairs').setup({})
+    require("nvim-autopairs").setup({})
 
     --[[
     local cmp = require('cmp')
@@ -13,5 +13,5 @@ return {
       cmp_autopairs.on_confirm_done()
     )
     ]]
-  end
+  end,
 }

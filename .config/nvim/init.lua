@@ -1,1 +1,1 @@
-require('mimivalsi')
+require("mimivalsi")
