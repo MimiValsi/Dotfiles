@@ -28,18 +28,18 @@ autocmd({ "FileType" }, {
   end,
 })
 
-autocmd("FileType", {
-  pattern = { "lua", "js", "html" },
-
-  callback = function()
-    opt.shiftwidth = 2
-  end,
-})
-
-autocmd("FileType", {
-  pattern = { "go", "c" },
-
-  callback = function()
-    opt.shiftwidth = 8
-  end,
-})
+-- autocmd("FileType", {
+--   pattern = { "lua", "js", "html" },
+--
+--   callback = function()
+--     opt.shiftwidth = 2
+--   end,
+-- })
+--
+-- autocmd("FileType", {
+--   pattern = { "go", "c" },
+--
+--   callback = function()
+--     opt.shiftwidth = 8
+--   end,
+-- })
