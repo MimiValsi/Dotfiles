@@ -15,6 +15,7 @@ return {
                 "html",
                 "css",
                 "luadoc",
+                "json",
             },
 
             sync_install = false,

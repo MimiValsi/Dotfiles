@@ -7,12 +7,16 @@ return {
         })
 
         local map = vim.keymap.set
-        map("n", "<leader>nf", function()
-            neogen.generate({ type = "func" })
-        end)
+        map(
+            "n",
+            "<leader>nf",
+            function() neogen.generate({ type = "func" }) end
+        )
 
-        map("n", "<leader>nt", function()
-            neogen.generate({ type = "type" })
-        end)
+        map(
+            "n",
+            "<leader>nt",
+            function() neogen.generate({ type = "type" }) end
+        )
     end,
 }
