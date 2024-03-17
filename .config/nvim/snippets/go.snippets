@@ -1,0 +1,133 @@
+snippet v
+	${1:var} := ${2:value}
+	$0
+
+snippet vr
+	var ${1:var} ${2:string}
+	$0
+
+snippet vs
+	var (
+    		${1:var} = ${2:value}
+    	)
+
+snippet ap
+	append(${1:slice}, ${2:value})
+	$0
+
+snippet bl
+	bool
+
+snippet bt
+	byte
+
+snippet br
+	break
+
+snippet cs
+	case ${1:value}:
+	    $1
+
+snippet if
+	if $1 {
+		$2
+	} $0
+
+snippet ife
+	if $1 {
+		$2
+	} else {
+		$3
+	}
+
+snippet el
+	else {
+		$1
+	}
+
+snippet eli
+	else if $1 {
+		$2
+	} $0
+
+snippet f
+	false
+
+snippet fl
+	float
+
+snippet for
+	for $1{
+		${0:code...}
+	}
+
+snippet ford
+	for ${1:i} := ${2:9}; $1 >= ${3:count}; $1-- {
+		${0:code...}
+	}
+
+snippet fori
+	for ${1:i} := ${2:0}; $1 < ${3:count}; $1++ {
+		${0:code...}
+	}
+
+snippet forr
+	for ${1:v} range ${2:collection} {
+		${0:code...}
+	}
+
+snippet fun
+	func ${1:funcName} (${2:args}) ${3:return} {
+		${4:code...}
+	}
+	$0
+
+snippet fum
+	func (${1:receiver} ${2:type}) ${3:funcName}(${4:args}) ${5:return} {
+		${6:code...}
+	}
+	$0
+
+snippet ir
+	if err != nil {
+		return err
+	}
+	$0
+
+
+snippet mk
+	make(${1:[]string}, ${0:0})
+	$0
+
+snippet mp
+	map[${1:string}]${0:int}
+	$0
+
+snippet main
+	func main () {
+		$1
+	}
+	$0
+
+snippet nw
+	new(${1:type})
+	$0
+
+snippet pa
+	package ${0:name}
+
+snippet pf
+	fmt.printf("${1:s}", ${0:value})
+	$0
+
+snippet pl
+	fmt.println($0)
+
+snippet ps
+	fmt.Sprintf($0)
+
+snippet rt
+	return $0
+
+snippet st
+	string
