@@ -8,7 +8,7 @@ autocmd({ "FileType" }, {
   callback = function()
     opt.backup = false -- plugin is used instead
     opt.breakindent = true -- wrap indent to match line start
-    opt.clipboard = "unnamed" -- separate "*" & "+" clipboard
+    opt.clipboard = "unnamedplus" -- same "*" & "+" clipboard
     opt.confirm = true -- raise dialogue asking if you wish to save the current file
     opt.completeopt = { "menu", "menuone", "noselect" } -- use popup list when possible
     opt.copyindent = true -- copy previous indent from autoindent
@@ -24,7 +24,7 @@ autocmd({ "FileType" }, {
     opt.mouse = "i" -- allows mouse in Insert mode only
     opt.number = true -- activate column numbers
     opt.preserveindent = true -- preserve indents as much as possible
-    opt.pumheight = 5 -- height of popup menu, good for laptaps
+    -- opt.pumheight = 5 -- height of popup menu, good for laptaps
     opt.relativenumber = true -- make column numbers relative, better line jump
     opt.scrolloff = 8 -- minimal screen lines
     -- opt.shiftwidth = 8 -- number of spaces to indent

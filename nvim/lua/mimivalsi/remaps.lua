@@ -46,6 +46,7 @@ map("i", "<C-e>", "<End>")
 map("i", "jk", "<Esc>")
 
 ---- VISUAL MODE ----
+map("v", "sd", "<Esc>")
 map("v", "J", ":m '>+1<CR>gv=gv", {
   desc = [[make the selected hightlighted line and go up one line, indent if possible and highlight it again]],
 })
