@@ -1,4 +1,3 @@
-
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
@@ -34,6 +33,7 @@ focus_follows_mouse no
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+
 bindsym $mod+Ctrl+F3 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
@@ -62,7 +62,6 @@ bindsym $mod+Shift+F6 exec ddcutil --bus 7 setvcp 10 + 10
 bindsym $mod+Ctrl+Shift+F5 exec ddcutil --bus 8 setvcp 10 - 10
 bindsym $mod+Ctrl+Shift+F6 exec ddcutil --bus 8 setvcp 10 + 10
 
-
 # Use playerctl for media
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym $mod+Ctrl+o exec playerctl play-pause
@@ -78,6 +77,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec kitty
+bindsym $mod+Ctrl+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -89,7 +90,6 @@ bindsym $mod+i focus up
 bindsym $mod+l focus right
 
 # move focused window
-
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -193,12 +193,13 @@ bindsym $mod+Ctrl+v exec virtualbox
 bindsym $mod+Ctrl+d exec discord
 bindsym $mod+Ctrl+c exec claws-mail
 bindsym $mod+Ctrl+t exec tmux
+bindsym $mod+Ctrl+s exec steam
 
 # Custom shortcuts for scripts
 bindsym $mod+Ctrl+e exec $HOME/bin/ext_screen
 bindsym $mod+Ctrl+i exec $HOME/bin/int_screen
 bindsym $mod+Ctrl+k exec $HOME/bin/mykbd
-bindsym $mod+Ctrl+F12 exec $HOME/bin/print
+bindsym $mod+Ctrl+Shift+p exec $HOME/bin/print
 
 bindsym $mod+Ctrl+Shift+l exec libreoffice 
 
@@ -211,8 +212,6 @@ mode $opts {
         bindsym $mod+l exec "$HOME/.config/i3/lock_and_blur.sh"
         bindsym $mod+p exec systemctl poweroff
 
-        # bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 bindsym $mod+Ctrl+q mode $opts
-
