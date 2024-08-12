@@ -1,4 +1,4 @@
 #!/bin/sh
 
-mons -s
+# mons -s
 exec i3
