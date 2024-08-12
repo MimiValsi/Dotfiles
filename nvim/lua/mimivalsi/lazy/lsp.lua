@@ -107,22 +107,22 @@ return {
           })
         end,
 
-	-- ["clangd"] = function ()
-	-- 	lspconfig.clangd.setup({
-	--     cmd = { "/usr/bin/clangd" },
-	--     filetypes = { "c", "cpp" },
-	--     root_dir = lspconfig.util.root_pattern(
-	--       '.clangd',
-	--       '.clang-tidy',
-	--       '.clang-format',
-	--       '.compile_commands.json',
-	--       '.compile_flags.txt',
-	--       'configure.ac',
-	--       '.git'
-	--     ),
-	--     single_file_support = true,
-	--   })
-	-- end
+	["clangd"] = function ()
+		lspconfig.clangd.setup({
+	    cmd = { "/usr/bin/clangd" },
+	    filetypes = { "c", "cpp" },
+	    root_dir = lspconfig.util.root_pattern(
+	      '.clangd',
+	      '.clang-tidy',
+	      '.clang-format',
+	      '.compile_commands.json',
+	      '.compile_flags.txt',
+	      'configure.ac',
+	      '.git'
+	    ),
+	    single_file_support = true,
+	  })
+	end
 
       },
     })
