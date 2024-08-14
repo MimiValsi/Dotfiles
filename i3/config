@@ -16,7 +16,8 @@ font pango:FiraCode Nerd Font 12
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/arch_pixel_black.PNG
+# exec_always --no-startup-id feh --bg-fill ~/Pictures/arch_pixel_black.PNG
+exec_always --no-startup-id feh --bg-fill ~/Pictures/IMG_3827.JPG
 
 # Gaps
 for_window [class="^.*"] border pixel 1
