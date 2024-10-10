@@ -1,0 +1,40 @@
+! XTerm resources
+!
+! Remember to run `xrdb < .Xresources` after changing anything.
+
+!--------------------------!
+!           URXVT          !
+!--------------------------!
+
+! URxvt config
+URxvt.font: xft:FiraCode\ Nerd\ Font Mono:size=16, xft:Font\ Awesome\ 5\ Free\ Solid:size=18,\
+xft:Material\ Design\ Icons:size=16, xft:PowerLineSymbols:pixelsize=12
+URxvt.scrollTtyOutput:   False
+URxvt.scrollWithBuffer:  True
+URxvt.scrollTtyKeypress: True
+URxvt.background: #000000
+URxvt.foreground: #eeeeee
+URxvt.jumpScroll: True
+URxvt.scrollBar: False
+URxvt.cursorBlink: True
+URxvt.letterSpace: 1
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 2 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.termName: rxvt-unicode-256color
+
+! red
+URxvt.color1: #aa0000
+URxvt.color9: #aa0000
+
+! blue
+URxvt.color4: #227aaa
+URxvt.color12: #227aaa
+
+! green
+URxvt.color2: #00aa00
+URxvt.color10: #0aa000
