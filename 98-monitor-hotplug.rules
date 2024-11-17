@@ -1,0 +1,1 @@
+ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/mike/.Xauthority", RUN+="/home/mike/bin/monitor-hotplug.sh"
