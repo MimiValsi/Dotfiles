@@ -9,8 +9,8 @@
 ! URxvt config
 URxvt.font: xft:FiraCode\ Nerd\ Font Mono:size=16, xft:Font\ Awesome\ 5\ Free\ Solid:size=18,\
 xft:Material\ Design\ Icons:size=16, xft:PowerLineSymbols:pixelsize=12
-URxvt.scrollTtyOutput:   False
-URxvt.scrollWithBuffer:  True
+URxvt.scrollTtyOutput: False
+URxvt.scrollWithBuffer: True
 URxvt.scrollTtyKeypress: True
 URxvt.background: #000000
 URxvt.foreground: #eeeeee
@@ -20,21 +20,93 @@ URxvt.cursorBlink: True
 URxvt.letterSpace: 1
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: brave
 URxvt.underlineURLs: true
-URxvt.urlButton: 2 
+URxvt.urlButton: 1
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.termName: rxvt-unicode-256color
+URxvt.pointerBlank: true
 
-! red
+! perl cmds
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher
+
+! Palette
+#############
+# Highlight #
+#############
+URxvt.color0: #282828
+
+###########################
+# Highlight setuid/setgid #
+###########################
 URxvt.color1: #aa0000
-URxvt.color9: #aa0000
+###############################################
+# Font color setuid/setgid (highlighted by 2) #
+###############################################
+URxvt.color7: #1fdfaf
 
-! blue
-URxvt.color4: #227aaa
-URxvt.color12: #227aaa
+##################
+# highlight dir? #
+##################
+URxvt.color2: #08971a
 
-! green
-URxvt.color2: #00aa00
-URxvt.color10: #0aa000
+######################
+# Device / pipe file #
+######################
+URxvt.color3: #d79921
+
+#############
+# Directory #
+#############
+URxvt.color4: #3f5f9f
+
+#############################
+# Image color / socket file #
+#############################
+URxvt.color5: #ff00cf
+
+###########################
+#  #
+###########################
+URxvt.color6: #10eb0f
+
+
+URxvt.color8: #928374
+
+############
+# sym link #
+############
+URxvt.color9: #1fdfaf
+
+####################
+# Executable files #
+####################
+URxvt.color10: #08971a
+
+################
+# device files #
+################
+URxvt.color11: #d79921
+
+#############
+# Dir color #
+#############
+URxvt.color12: #3f5f9f
+
+##################################
+# Query person name (ehhhh? IRC) #
+##################################
+URxvt.color13: #d3869b
+
+###############
+# sym link id #
+###############
+URxvt.color14: #10ebdf
+
+###############
+# #name (IRC) #
+###############
+URxvt.color15: #ebdbb2
+
