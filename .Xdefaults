@@ -8,7 +8,8 @@
 
 ! URxvt config
 URxvt.font: xft:FiraCode\ Nerd\ Font Mono:size=16, xft:Font\ Awesome\ 5\ Free\ Solid:size=18,\
-xft:Material\ Design\ Icons:size=16, xft:PowerLineSymbols:pixelsize=12
+xft:Material\ Design\ Icons:size=16, xft:PowerLineSymbols:pixelsize=12, xft:Source\ Code\ Pro-9:size=16,\
+xft:Noto\ Emoji-9:size=16
 URxvt.scrollTtyOutput: False
 URxvt.scrollWithBuffer: True
 URxvt.scrollTtyKeypress: True
