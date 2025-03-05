@@ -190,6 +190,8 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+g exec gimp
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+s exec spotify-launcher
+bindsym $mod+Shift+e exec emacs
+
 
 bindsym $mod+Ctrl+b exec brave
 bindsym $mod+Ctrl+d exec discord
