@@ -11,13 +11,11 @@
 connected=$(xrandr | grep -c " connected")
 
 if [[ $connected == 1 ]]; then
-        # echo ${connected}
         # echo "Only main monitor connected"
-        xrandr --output eDP1 --auto
+        # This is to scale GTK apps in respect to internal monitor dpi
+        echo "export GDK_SCALE=2 CLUTTER_SCALE=2 | sudo tee /etc/profile.d/gdk_scaling.sh"
+        xrandr --output eDP-1 --auto
 else
-        # echo ${connected}
-        # echo "Multiple monitors connected"
-
         # Fetch monitor which is connected
         # Regex: Fetch every 'graph' -> letters, numbers, signs but not blanks
         # I don't need to know if 'VIRTUALx' is connected or not
@@ -26,12 +24,11 @@ else
         # A loop is made coz I don't know which output will be picked.
         # This is intended be used with only one external screen
         for i in ${monitors}; do
-                # echo ${i}
-                if [[ ${i} == "eDP1" ]]; then
+                if [[ ${i} == "eDP-1" ]]; then
                         continue
                 fi
-                xrandr --output ${i} --mode 1920x1080 --output eDP1 --off
+                echo "export GDK_SCALE=1 CLUTTER_SCALE=1 | sudo tee /etc/profile.d/gdk_scaling.sh"
+                xrandr --output ${i} --mode 1920x1080 --output eDP-1 --off
                 break
         done
 fi
-# xrandr --output HDMI1 --mode 1920x1080 --output eDP1 --off
