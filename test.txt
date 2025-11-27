@@ -1,0 +1,7 @@
+test
+if [ /tmp/tmux-1000/default,1005,18 =  ]; then tmux new \; set-option destroy-unattached; fi
+if [ "/tmp/tmux-1000/default,1005,18" =  ]; then tmux new \; set-option destroy-unattached; fi
+if [ "$TMUX" =  ]; then tmux new \; set-option destroy-unattached; fi
+if [ "$TMUX" = "" ]; then tmux new \; set-option destroy-unattached; fi
+if [ "$TMUX" = " ]; then tmux new \; set-option destroy-unattached; fi
+if [ "$TMUX" = "" ]; then tmux new \; set-option destroy-unattached; fi
