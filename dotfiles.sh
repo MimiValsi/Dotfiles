@@ -28,7 +28,7 @@ function install_X() {
 function install_packages() {
   # Install all apps thrown here
   pacman -S --noconfirm --needed brightnessctl curl firewalld foot git go ImageViewer jack2 lazygit npm nvim \
-    openssh otf-font-awesome jq nftables pulseaudio pulseaudio-bluetooth tmux ttf-firacdode-nerd unzip zig zsh yay wget
+    openssh otf-font-awesome jq nftables postgresql pulseaudio pulseaudio-bluetooth tmux ttf-firacdode-nerd unzip zig zsh yay wget
 
   # Brave
   curl -fsS https://dl.brave.com/install.sh | sh
