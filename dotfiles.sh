@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# URLs
+# https://github.com/swaywm/sway/wiki
+
 # Paths
 nvim="$HOME/.config/nvim"
 tmux="$HOME/.config/tmux"
+bin="$HOME/bin"
 
 # Xorg
 X_polybar="$HOME/.config/polybar"
@@ -22,7 +26,7 @@ function help() {
 function install_X() {
   pacman -S --needed --noconfirm xorg i3
   # First create directories then copy
-  mkdir -p "${X_polybar}" "${nvim}" "${X_i3}"
+  mkdir -p "${X_polybar}" "${nvim}" "${X_i3}" "${bin}"
 }
 
 function install_packages() {
@@ -56,9 +60,8 @@ function test() {
 function install_wayland() {
   pacman -S --noconfirm --needed wayland waybar sway swaybg swayidle swaylock
   install_packages
-
   # First create folders
-  mkdir -p "${waybar}" "${sway}" "${nvim}"
+  mkdir -p "${waybar}" "${sway}" "${nvim}" "${bin}"
 
   echo "copying waybar to ${waybar}..."
   cp -r "./wayland/waybar/" "${waybar}"
